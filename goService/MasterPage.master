@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>goService</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        
+         #master-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh; 
+        }
+
+        
+        header {
+            background: rgb(151,208,237);
+            background: radial-gradient(circle, rgba(151,208,237,1) 40%, rgba(9,18,127,1) 100%);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .website-name 
+        {
+        	font-family: cursive;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .website-name img {
+           width: 20%;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            padding: 8px 15px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #09127f;
+        }
+
+       
+        .content {
+            text-align: center;
+            margin: 20px;
+            flex: 1;
+            overflow-y: auto; 
+        }
+
+       
+        footer {
+            background: rgb(9,18,127);
+            background: radial-gradient(circle, rgba(9,18,127,1) 0%, rgba(151,208,237,1) 0%);
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="master-container">
+        <header>
+            <div class="website-name">
+                 <img src="images/goservice-high-resolution-logo-black-transparent.png" />
+                
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="Default.aspx">Home</a></li>
+                    <li><a href="Services.aspx">Services</a></li>
+                    <li><a href="AboutUs.aspx">About Us</a></li>
+                    <li><a href="Feedback.aspx">Feedback</a></li>
+                    <li><a href="Login.aspx">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                <h2>Welcome to goService!</h2>
+                <p>This is the default content. Update the content in your specific pages.</p>
+            </asp:ContentPlaceHolder>
+        </div>
+        
+        <footer>
+            <p>&copy; 2023 goService. All rights reserved.</p>
+        </footer>
+    </div>
+    </form>
+</body>
+</html>

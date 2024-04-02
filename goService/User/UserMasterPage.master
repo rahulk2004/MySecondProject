@@ -1,0 +1,130 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="UserMasterPage.master.cs" Inherits="User_UserMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>goService</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        
+        header {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px 0;
+            text-align: center;
+        }
+        
+         #master-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh; 
+        }
+
+        .website-name {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .website-name h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #3498db;
+        }
+
+        .logo img {
+            width: 20%;
+            margin-right: 10px;
+        }
+        
+        .welcome-message {
+        font-size: 18px;
+        color: #3498db;
+        margin-top: 10px; 
+         font-weight: bold; 
+        
+    }
+
+        nav {
+            text-align: center;
+            background-color: #34495e;
+            border-top: 2px solid #3498db;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ecf0f1;
+            padding: 15px;
+            display: inline-block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .content {
+            text-align: center;
+            margin: 20px;
+            flex: 1; 
+            overflow-y: auto;
+        }
+
+        nav a:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="master-container">
+            <header>
+                <div class="website-name">
+                    <div class="logo">
+                        <img src="../images/goservice-high-resolution-logo-transparent.png" />
+                    </div>
+                    <div class="user-welcome">
+                        <asp:Label ID="lblWelcomeMessage" runat="server" CssClass="welcome-message"></asp:Label>
+                    </div>
+                </div>
+            </header>
+
+            <nav>
+                <ul>
+                    <li><a href="UserHome.aspx">Home</a></li>
+                    <li><a href="UserProfile.aspx">Profile</a></li>
+                    <li><a href="UserServices.aspx">Services</a></li>
+                    <li><a href="UserRating.aspx">Ratings</a></li>
+                    <li><a href="UserLogout.aspx">Logout</a></li>
+                </ul>
+            </nav>
+
+            <div class="content">
+            <asp:Label ID="Label1" runat="server" CssClass="welcome-message"></asp:Label>
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                    
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
